@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #fbc2eb);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.title {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px #000;
+    animation: glow 1.5s infinite alternate;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.balloons {
+    position: relative;
+    height: 300px;
+}
+
+.balloon {
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: '';
+    width: 2px;
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon.red { background: #ff4d4d; left: 20%; animation-delay: 0s; }
+.balloon.blue { background: #4da6ff; left: 40%; animation-delay: 2s; }
+.balloon.green { background: #4dff4d; left: 60%; animation-delay: 4s; }
+.balloon.yellow { background: #ffff4d; left: 80%; animation-delay: 6s; }
+
+.btn {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #000;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61; }
+    to { text-shadow: 0 0 20px #ff9a9e, 0 0 30px #ff9a9e; }
+}
